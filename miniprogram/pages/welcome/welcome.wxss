@@ -1,0 +1,65 @@
+/* pages/welcome/welcome.wxss */
+.container{
+  margin-top:125rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.company_logo {
+  width: 500rpx;
+  height: 300rpx;
+  margin: 1rpx;
+}
+
+.locationClass{
+  display:flex;
+  flex-direction: row;
+  width: 220px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-size:small;
+}
+
+.scan{
+  margin-top:150rpx;
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.input1{
+  margin-right: 10rpx;
+}
+.input{
+  margin-top:20rpx;
+  align-items:center;
+  
+  display:flex;
+  flex-direction:row;
+}
+
+.clear{
+  width:30rpx;
+  height: 30rpx;
+}
+.moto-container{
+  margin-top: 20rpx;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+page{
+  background-color: aliceblue;
+}
+
+.uploadButton {
+  width: 50%;
+  margin-top: 30rpx;
+  color: black;
+  border-radius: 98rpx; 
+}
+.uploadButton::after {
+  border-radius: 98rpx;
+}

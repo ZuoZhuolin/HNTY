@@ -1,0 +1,9 @@
+  <view class="imageShow" >
+    <image style="width: 185rpx; height: 185rpx; margin:1.5rpx" src='../images/camera.png' class="upload" mode="aspectFit" bindtap='uploadImg'></image>
+    <view wx:for="{{tempFilePaths}}"wx:key="{{index}}">
+      <image style="width: 185rpx; height: 185rpx; margin:1.5rpx;" src='{{item}}' class="image" mode="aspectFit" data-id='{{index}}' bindlongpress='deleteimg'></image>
+    </view>
+  </view>
+  <view class="buttons">
+        <button class="uploadService" bindtap='simpleUpload'>上传</button>
+  </view>

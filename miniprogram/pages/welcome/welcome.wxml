@@ -1,0 +1,30 @@
+<!--pages/welcome/welcome.wxml-->
+<page>
+  <view class='container'>
+    <image class='company_logo' src='../images/company_logo.png'></image>
+    
+    <view class='locationClass'>  
+      <view class="longitude">
+        <text>经度：{{location.longitude}}</text>
+      </view>
+      <view class="latitude">
+        <text>纬度：{{location.latitude}}</text>
+      </view>
+    </view>
+   
+    <image class="scan" bindtap="scanclick" src='../images/saoma.png'></image>
+
+    <view class="input">
+      <view class="input1">仪器编号:</view>
+      <input class='intrument-id' placeholder="输入仪器编号或点击扫一扫" value = "{{idValue}}" bindinput="idInput" style="width:400rpx;height:50px;"></input>
+      <image class='clear' src='../images/close-circle.png' bindtap='clearInput'></image>
+    </view>
+    
+    <view class='moto-container'>
+      <view class='upload' bindtap='login'>
+        <button type='primary' class='uploadButton'>登录</button>
+      </view>
+    </view>  
+  
+  </view>
+</page>

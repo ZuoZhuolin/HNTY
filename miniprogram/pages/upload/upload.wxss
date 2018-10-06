@@ -1,0 +1,11 @@
+.imageShow{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 92px;
+}
+.buttons{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
