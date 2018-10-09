@@ -28,14 +28,14 @@ Page({
     }),
     wx.getLocation({
       success: function (res) {
-        app.globalData.longitude = res.longitude;
-        app.globalData.latitude = res.latitude;
+        app.globalData.longitude = res.longitude.toFixed(3);
+        app.globalData.latitude = res.latitude.toFixed(3);
         //console.log(res)
         that.setData({
           hasLocation: true,
           location: {
-            longitude: res.longitude,
-            latitude: res.latitude,
+            longitude: res.longitude.toFixed(3),
+            latitude: res.latitude.toFixed(3),
           }
         })
       }
@@ -132,6 +132,7 @@ Page({
   },
 
   login: function(){
+   
     wx.request({
       url: 'http://47.92.33.38:8080/hnty/app/android/instrumentIdList?instrumentId=' + this.data.instrumentId,
       method: 'GET',
@@ -149,6 +150,8 @@ Page({
         }
       }
     })
+    
+   
     app.globalData.instrumentId = this.data.instrumentId
   },
 

@@ -3,6 +3,7 @@
   "pages": [
     "pages/welcome/welcome",
     "pages/upload/upload",
+    "pages/preview/preview",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -17,5 +18,25 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
+  },
+
+  
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/upload/upload",
+        "text": "上传",
+        "iconPath": "images/upload.png",
+        "selectedIconPath": "images/uploadblue.png"
+      },
+      {
+        "pagePath": "pages/preview/preview",
+        "text": "预览",
+        "iconPath": "images/cloud.png",
+        "selectedIconPath": "images/cloudblue.png"
+      }
+    ]
   }
+  
 }

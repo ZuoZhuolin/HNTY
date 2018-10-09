@@ -26,7 +26,7 @@ Page({
   uploadImg: function (e) {
     var that = this;
     wx.chooseImage({
-      count: 4, // 默认9
+      count: 9, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
@@ -52,9 +52,9 @@ Page({
         var nowMin = dateObj.toLocaleTimeString().substr(2);
         var nowTime = nowDate + ' ' + nowMin;
         var formatDate = nowDate.replace(/\//g, "-");  // 格式斜杠日期
-        
+        console.log(formatDate);
         var newKey = app.globalData.instrumentId + '/' + formatDate + '/' + timestamp + '.' + Key;   // cos上定义目录
-        
+        console.log(newKey);
         var tempObj = {};
         var fileName = timestamp + '.' + Key;
         var picAddress = "https://hnty-1257729707.cos.ap-beijing.myqcloud.com/" + newKey;

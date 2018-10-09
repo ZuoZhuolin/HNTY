@@ -1,2 +1,12 @@
 <!--pages/preview/preview.wxml-->
-<text>pages/preview/preview.wxml</text>
+<view class="ID">
+  <text class="instrId">仪器编号：{{ instrumentId}}</text>
+</view>
+<view class="location">
+  <view class="longitude">
+      <text>经度：{{longitude}}</text>
+  </view>
+  <view class="latitude">
+      <text>纬度：{{latitude}}</text>
+  </view>
+</view>
