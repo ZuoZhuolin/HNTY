@@ -6,46 +6,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    instrumentId: app.globalData.instrumentId,
-    longitude: app.globalData.longitude,
-    latitude: app.globalData.latitude
+    longitude:null,
+    latitude:null,
+    instrumentId:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.longitude)
-    console.log(app.globalData.latitude)
-    console.log(app.globalData.instrumentId)
+   
+    this.setData({ 'longitude': app.globalData.longitude })
+    this.setData({ 'latitude': app.globalData.latitude})
+    this.setData({ 'instrumentId': app.globalData.instrumentId})
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+   
   },
 
   /**

@@ -2,7 +2,6 @@ var app = getApp();
 var api = app.globalData.api;
 var COS = require('../lib/cos-wx-sdk-v5');
 var config = require('./config');
-var tempArray = null;
 var cos = new COS({
   getAuthorization: function (params, callback) {	//获取签名        
   var authorization = COS.getAuthorization({            
@@ -52,9 +51,9 @@ Page({
         var nowMin = dateObj.toLocaleTimeString().substr(2);
         var nowTime = nowDate + ' ' + nowMin;
         var formatDate = nowDate.replace(/\//g, "-");  // 格式斜杠日期
-        console.log(formatDate);
+        //console.log(formatDate);
         var newKey = app.globalData.instrumentId + '/' + formatDate + '/' + timestamp + '.' + Key;   // cos上定义目录
-        console.log(newKey);
+        //console.log(newKey);
         var tempObj = {};
         var fileName = timestamp + '.' + Key;
         var picAddress = "https://hnty-1257729707.cos.ap-beijing.myqcloud.com/" + newKey;
@@ -84,9 +83,11 @@ Page({
           telNumber: ""
         },
         success: function (res) {
-          console.log(res.data);
+          //console.log(res.data);
+          var tempArray = null;
           tempArray = wx.getStorageSync('picture');
           console.log(tempArray);
+          tempArray.push(picAddress)
           wx.setStorageSync('picture', picAddress);
         }
       })
@@ -98,16 +99,16 @@ Page({
     var that = this;
     var images = that.data.tempFilePaths;
     var index = e.currentTarget.dataset.id;//获取当前长按图片下标
-    console.log(index);
+    //console.log(index);
     wx.showModal({
       title: '提示',
       content: '确定要删除此图片吗？',
       success: function (res) {
         if (res.confirm) {
-          console.log('点击确定了');
+          //console.log('点击确定了');
           images.splice(index, 1);
         } else if (res.cancel) {
-          console.log('点击取消了');
+          //console.log('点击取消了');
           return false;
         }
         that.setData({
@@ -121,7 +122,7 @@ Page({
 
 // 上传图片回调函数
 var requestCallback = function (err, data) {
-  console.log(err || data);
+  //console.log(err || data);
   if (err && err.error) {
     wx.showModal({ title: '返回错误', content: '请求失败：' + err.error.Message + '；状态码：' + err.statusCode, showCancel: false });
   } else if (err) {
