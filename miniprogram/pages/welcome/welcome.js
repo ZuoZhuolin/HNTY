@@ -132,9 +132,22 @@ Page({
   },
 
   login: function(){
-    
-    wx.navigateTo({
-      url: '../upload/upload'
+    wx.request({
+      url: 'http://47.92.33.38:8080/hnty/app/android/instrumentIdList?instrumentId=' + this.data.instrumentId,
+      method: 'GET',
+      success: function (res) {
+        if (res.data.length < 1) {
+          wx.showToast({
+            title: '密码错误',
+            icon: 'none',
+            duration: 2000
+          })
+        } else {
+          wx.switchTab({
+            url: '../upload/upload'
+          })
+        }
+      }
     })
     app.globalData.instrumentId = this.data.instrumentId
   },

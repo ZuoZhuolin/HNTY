@@ -69,10 +69,30 @@ Page({
           // console.log(JSON.stringify(info));
           // }
         }, requestCallback(null, tempObj));
-    
-      
+      wx.request({
+        url: 'http://47.92.33.38:8080/hnty/app/android/insertAppUploadMediaInfo?mediaName=' + fileName,
+        method: "POST",
+        data: {
+          bucketName: "hnty-1257729707",
+          instrumentId: app.globalData.instrumentId,
+          latitude: app.globalData.longitude,
+          longitude: app.globalData.latitude,
+          mediaAddress: picAddress,
+          mediaDate: nowTime,
+          mediaName: fileName,
+          mediaType: Key,
+          telNumber: ""
+        },
+        success: function (res) {
+          console.log(res.data);
+          tempArray = wx.getStorageSync('picture');
+          console.log(tempArray);
+          wx.setStorageSync('picture', picAddress);
+        }
+      })
     }
   },
+      
   //删除已选择图片
   deleteimg: function (e) {
     var that = this;
